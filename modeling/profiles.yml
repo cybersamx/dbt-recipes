@@ -1,0 +1,22 @@
+# Append this section to ~/.dbt/profiles.yml
+modeling:
+  outputs:
+    dev:
+      type: postgres
+      threads: 4
+      host: localhost
+      port: 5432
+      user: postgres
+      pass: password
+      dbname: db_dev
+      schema: public
+    prod:
+      type: postgres
+      threads: 4
+      host: localhost
+      port: 5432
+      user: postgres
+      pass: password
+      dbname: db_prod
+      schema: public
+  target: dev
