@@ -1,5 +1,5 @@
 # Append this section to ~/.dbt/profiles.yml
-modeling:
+dbt_modeling_profile:
   outputs:
     dev:
       type: postgres
@@ -9,7 +9,7 @@ modeling:
       user: postgres
       pass: password
       dbname: db_dev
-      schema: public
+      schema: modeling
     prod:
       type: postgres
       threads: 4
@@ -18,5 +18,5 @@ modeling:
       user: postgres
       pass: password
       dbname: db_prod
-      schema: public
+      schema: modeling
   target: dev

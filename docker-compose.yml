@@ -3,7 +3,7 @@ version: '3.8'
 services:
   postgres:
     image: postgres:10.23-alpine
-    container_name: postgres_dbt_modeling
+    container_name: postgres_dbt_recipes
     ports:
       - '5432:5432'
     environment:
@@ -11,7 +11,7 @@ services:
       POSTGRES_PASSWORD: password
       POSTGRES_DB: db_dev
     networks:
-      - dbt_modeling
+      - dbt_recipes
 
 networks:
-  dbt_modeling:
+  dbt_recipes:

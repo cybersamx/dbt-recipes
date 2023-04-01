@@ -1,0 +1,21 @@
+
+version: 2
+
+models:
+  - name: table_model
+    description: "Model that is mapped to a table"
+    columns:
+      - name: id
+        description: "Primary key"
+        tests:
+          - unique
+          - not_null
+
+  - name: view_model
+    description: "Model that is mapped to a view"
+    columns:
+      - name: id
+        description: "Primary key"
+        tests:
+          - unique
+          - not_null

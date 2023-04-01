@@ -4,6 +4,9 @@
 **/dbt_packages/
 **/logs/
 
+# Ignore this for now
+**/.user.yml
+
 ### Intellij ###
 .idea
 
@@ -176,3 +179,6 @@ poetry.toml
 
 # LSP config files
 pyrightconfig.json
+
+### Others ###
+.tmp/
