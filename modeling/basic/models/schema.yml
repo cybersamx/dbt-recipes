@@ -2,8 +2,8 @@
 version: 2
 
 models:
-  - name: table_model
-    description: "Model that is mapped to a table"
+  - name: people
+    description: "People in the world"
     columns:
       - name: id
         description: "Primary key"
@@ -11,8 +11,8 @@ models:
           - unique
           - not_null
 
-  - name: view_model
-    description: "Model that is mapped to a view"
+  - name: employees
+    description: "Employee of acme company"
     columns:
       - name: id
         description: "Primary key"

@@ -1,16 +1,8 @@
-# Modeling
+# Basic
 
-This project focuses on the modeling aspect of dbt. It contains some examples on modeling.
+This project focuses on the basic dbt modeling.
 
 ## Setup
-
-1. Run postgres docker container.
-
-   ```shell
-   docker-compose -f ../docker-compose.yml up
-   ```
-
-1. Copy the content of [profiles.yml](profiles.yml) and append it to `~/.dbt/profiles.yml`.
 
 1. Run the project.
 
@@ -26,12 +18,6 @@ This project focuses on the modeling aspect of dbt. It contains some examples on
    # Once table_model.sql is changed, run dbt to remove the null record and test it again.
    dbt run
    dbt test  # Should pass now
-   ```
-
-1. Once you are done, stop and remove the postgres container.
-
-   ```shell
-   docker-compose -f ../docker-compose.yml down
    ```
 
 ## Notes

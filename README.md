@@ -2,7 +2,8 @@
 
 Started this project as I was learning dbt. Hope to build up a handy reference for anyone looking up for an example on doing things in dbt.
 
-* [dbt Modeling](modeling)
+* dbt modeling
+  * [Basic modeling](modeling/basic)
 
 ## Setup
 
@@ -30,11 +31,28 @@ dbt install --upgrade dbt-core
 
 ### Running Postgres
 
-All the dbt projects in this repo uses one common instance of postgres that can be started from this [docker-compose.yml](docker-compose.yml) file.
+All the dbt projects in this repo uses one common instance of postgres.
 
-```shell
-docker-compose up
-```
+1. Run the postgres container. Make sure we are in the root directory where [docker-compose.yml](docker-compose.yml) is.
+
+   ```shell
+   docker-compose up
+   ```
+
+1. Copy the content of [profiles.yml](profiles.yml) and append it to `~/.dbt/profiles.yml` so that any dbt projects in this repo can connect to the postgres instance.
+
+   ```shell
+   DBT_PROFILES_FILE="${HOME}/.dbt/profiles.yml"
+   [ -f "${DBT_PROFILES_FILE}" ] || touch "${DBT_PROFILES_FILE}"
+   cat ./profiles.yml >> "${DBT_PROFILES_FILE}"
+   unset DBT_PROFILES_FILE  
+   ```
+   
+1. Once you are done, stop and remove the postgres container.
+
+   ```shell
+   docker-compose down
+   ```
 
 ### Querying and Troubleshooting
 

@@ -1,5 +1,6 @@
+
 # Append this section to ~/.dbt/profiles.yml
-dbt_modeling_profile:
+dbt_recipes_profile:
   outputs:
     dev:
       type: postgres
@@ -9,7 +10,7 @@ dbt_modeling_profile:
       user: postgres
       pass: password
       dbname: db_dev
-      schema: modeling
+      schema: dbt_recipes
     prod:
       type: postgres
       threads: 4
@@ -18,5 +19,5 @@ dbt_modeling_profile:
       user: postgres
       pass: password
       dbname: db_prod
-      schema: modeling
+      schema: dbt_recipes
   target: dev
