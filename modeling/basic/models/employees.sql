@@ -1,2 +1,2 @@
 select * from {{ ref('people') }}
-    where id = 1
+    where company = 'Acme'

@@ -10,6 +10,10 @@ models:
         tests:
           - unique
           - not_null
+      - name: name
+        description: "Person name"
+      - name: company
+        description: "Company where the person works"
 
   - name: employees
     description: "Employee of acme company"
@@ -19,3 +23,5 @@ models:
         tests:
           - unique
           - not_null
+      - name: name
+        description: "Person name"
