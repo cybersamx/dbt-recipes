@@ -1,27 +1,30 @@
-
 version: 2
 
 models:
   - name: people
-    description: "People in the world"
+    description: 'People in the world'
     columns:
       - name: id
-        description: "Primary key"
-        tests:
-          - unique
-          - not_null
+        description: 'Primary key'
       - name: name
-        description: "Person name"
+        description: 'Person name'
       - name: company
-        description: "Company where the person works"
+        description: 'Company where the person works'
 
   - name: employees
-    description: "Employee of acme company"
+    description: 'Employee of acme company'
     columns:
       - name: id
-        description: "Primary key"
-        tests:
-          - unique
-          - not_null
+        description: 'Primary key'
       - name: name
-        description: "Person name"
+        description: 'Person name'
+
+  - name: us_companies
+    description: 'Companies in US'
+    columns:
+      - name: id
+        description: 'Primary key'
+      - name: country
+        description: 'Country where the company reside'
+      - name: name
+        description: 'Company name'

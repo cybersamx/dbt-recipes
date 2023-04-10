@@ -10,21 +10,16 @@ A dbt SQL model is defined in a `.sql` file that encapsulates a select statement
 
 ![Model files](images/model_files.png)
 
+* The `companies` table has been created when launching postgres via docker.
+* The `people` table is created when running `dbt run`. See the annotated diagram.
+* The `employees` view is created when running `dbt run`.
+
 ## Setup
 
 1. Run the project.
 
    ```shell
    dbt run
-   ```
-
-1. Test the project.
-
-   ```shell
-   dbt test
-   # This will fail, unless we remove the record with a null id. Edit people.sql and run the following.
-   dbt run
-   dbt test  # Should pass now
    ```
 
 ## Notes

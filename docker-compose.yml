@@ -10,6 +10,8 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: password
       POSTGRES_DB: db_dev
+    volumes:
+      - ./db-init.sql:/docker-entrypoint-initdb.d/db-init.sql
     networks:
       - dbt_recipes
 
