@@ -1,0 +1,30 @@
+version: 2
+
+models:
+  - name: people
+    description: 'People in the world'
+    columns:
+      - name: id
+        description: 'Primary key'
+      - name: name
+        description: 'Person name'
+      - name: company
+        description: 'Company where the person works'
+
+  - name: employees
+    description: 'Employee of acme company'
+    columns:
+      - name: id
+        description: 'Primary key'
+      - name: name
+        description: 'Person name'
+
+  - name: us_companies
+    description: 'Companies in US'
+    columns:
+      - name: id
+        description: 'Primary key'
+      - name: country
+        description: 'Country where the company reside'
+      - name: name
+        description: 'Company name'

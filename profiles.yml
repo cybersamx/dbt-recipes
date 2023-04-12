@@ -1,6 +1,7 @@
 
-# Append this section to ~/.dbt/profiles.yml
+# Append this section to ~/.dbt/profiles.yml if you haven't done so already
 dbt_recipes_profile:
+  target: dev
   outputs:
     dev:
       type: postgres
@@ -20,4 +21,3 @@ dbt_recipes_profile:
       pass: password
       dbname: db_prod
       schema: dbt_recipes
-  target: dev

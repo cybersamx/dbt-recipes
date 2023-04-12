@@ -31,3 +31,4 @@ A dbt SQL model is defined in a `.sql` file that encapsulates a select statement
 * [dbt Docs: About dbt models](https://docs.getdbt.com/docs/build/models)
 * [dbt Docs: SQL models](https://docs.getdbt.com/docs/build/sql-models)
 * [dbt Docs: Model properties](https://docs.getdbt.com/reference/model-properties)
+* [dbt Docs: dbt jinga functions](https://docs.getdbt.com/reference/dbt-jinja-functions)

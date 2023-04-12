@@ -1,0 +1,16 @@
+# Project-scoped profile.
+dbt_recipes_py_profile:
+  target: dev_fal
+  outputs:
+    dev_fal:
+      type: fal
+      db_profile: dev
+    dev:
+      type: postgres
+      threads: 4
+      host: localhost
+      port: 5432
+      user: postgres
+      pass: password
+      dbname: db_dev
+      schema: dbt_recipes

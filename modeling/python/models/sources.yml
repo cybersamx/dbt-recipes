@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: dbt_recipes
+    database: db_dev
+    schema: dbt_recipes
+    tables:
+      - name: companies
