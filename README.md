@@ -3,8 +3,8 @@
 Started this project as I was learning dbt. Hope to build up a handy reference for anyone looking up for an example on doing things in dbt.
 
 * dbt modeling
-  * [Basic SQL modeling](modeling/basic)
-  * [Python modeling](modeling/python)
+  * [Basic SQL modeling](modeling/sql)
+  * [Basic Python modeling](modeling/python)
 
 ## Setup
 
@@ -32,7 +32,7 @@ dbt install --upgrade dbt-core
 
 ### Running Postgres
 
-All the dbt projects in this repo uses one common instance of postgres.
+All the dbt projects in this repo uses one common instance of postgres as defined by this [docker-compose.yml](docker-compose.yml) file.
 
 1. Run the postgres container. Make sure we are in the root directory where [docker-compose.yml](docker-compose.yml) is.
 

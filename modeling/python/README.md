@@ -1,4 +1,4 @@
-# Python Model
+# Basic Python Modeling
 
 Since version 1.3, dbt officially supports python with the following constraints:
 

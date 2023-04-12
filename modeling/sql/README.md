@@ -1,4 +1,4 @@
-# Basic
+# Basic SQL Modeling
 
 This project focuses on the basics of building dbt models using SQL.
 
@@ -16,10 +16,22 @@ A dbt SQL model is defined in a `.sql` file that encapsulates a select statement
 
 ## Setup
 
+1. Launch the postgres container.
+
+   ```shell
+   docker-compose -f ../../docker-compose.yml up
+   ```
+
 1. Run the project.
 
    ```shell
    dbt run
+   ```
+
+1. Tear down the postgres container.
+
+   ```shell
+   docker-compose -f ../../docker-compose.yml down
    ```
 
 ## Notes
