@@ -1,5 +1,4 @@
-
-# Append this section to ~/.dbt/profiles.yml if you haven't done so already
+# Project-scoped profile.
 dbt_recipes_profile:
   target: dev
   outputs:
