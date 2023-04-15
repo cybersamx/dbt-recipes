@@ -7,6 +7,8 @@ Started this project as I was learning dbt. Hope to build up a handy reference f
   * [Basic dbt Python modeling](modeling/python)
 * Source
   * [Basic dbt source example](source/basic)
+* Seed
+  * [Basic dbt seed example](seed/basic)
 
 ## Setup
 
