@@ -1,0 +1,13 @@
+version: 2
+
+seeds:
+  - name: companies
+    config:
+      quote_columns: false
+      schema: seed_data
+  - name: zip_codes
+    config:
+      column_types:
+        zip_code: varchar(5)
+        city: varchar(128)
+        state: varchar(2)
