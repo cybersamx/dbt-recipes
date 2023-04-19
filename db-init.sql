@@ -69,5 +69,5 @@ VALUES (1, 1, 2, 1, TIMESTAMP '2022-12-20 00:45:13');
 INSERT INTO dbt_recipes.orders (id, customer_id, product_id, qty, ordered_at)
 VALUES (1, 1, 3, 2, TIMESTAMP '2022-12-20 00:45:13');
 INSERT INTO dbt_recipes.orders (id, customer_id, product_id, qty, ordered_at)
-VALUES (1, 2, 3, 1, TIMESTAMP '2023-01-20 09:33:45');
+VALUES (2, 2, 3, 1, CURRENT_TIMESTAMP);
 

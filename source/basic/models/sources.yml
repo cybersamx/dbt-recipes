@@ -8,3 +8,11 @@ sources:
       - name: customers
       - name: products
       - name: orders
+        loaded_at_field: ordered_at
+    freshness:
+      warn_after:
+        count: 2
+        period: minute
+      error_after:
+        count: 1
+        period: minute

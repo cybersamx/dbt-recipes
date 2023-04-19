@@ -23,10 +23,10 @@ This project focuses on building the same dbt model in [the sql model project](.
    docker-compose -f ../../docker-compose.yml up
    ```
 
-1. Run the project.
+1. Build the project.
 
    ```shell
-   dbt run
+   dbt build
    ```
 
 1. Tear down the postgres container.

@@ -22,10 +22,10 @@ A dbt SQL model is defined in a `.sql` file that encapsulates a select statement
    docker-compose -f ../../docker-compose.yml up
    ```
 
-1. Run the project.
+1. Build the project.
 
    ```shell
-   dbt run
+   dbt build
    ```
 
 1. Tear down the postgres container.

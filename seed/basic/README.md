@@ -42,7 +42,7 @@ Alternatively, we can also build dbt models using Python, which will be covered 
    (4 rows)
    ```
 
-1. Run the project.
+1. Seed the project.
 
    ```shell
    dbt seed
