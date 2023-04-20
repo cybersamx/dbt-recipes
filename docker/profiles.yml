@@ -1,0 +1,13 @@
+# For connecting to a postgres in a docker environment.
+dbt_recipes_profile:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      threads: 4
+      host: '{{ env_var("PG_HOST", "localhost") }}'
+      port: 5432
+      user: postgres
+      pass: '{{ env_var("PG_PASSWORD") }}'
+      dbname: db_dev
+      schema: dbt_recipes

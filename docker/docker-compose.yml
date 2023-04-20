@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:10.23-alpine
+    container_name: dbt-recipes-postgres
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: "${PG_PASSWORD}"
+      POSTGRES_DB: db_dev
+    healthcheck:
+      test: 'pg_isready -U postgres'
+      interval: 5s
+      timeout: 10s
+      retries: 3
+    volumes:
+      - ../db-init.sql:/docker-entrypoint-initdb.d/db-init.sql
+    networks:
+      - net
+  dbt:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: dbt-recipes-dbt
+    environment:
+      PG_PASSWORD: "${PG_PASSWORD}"
+      PG_HOST: dbt-recipes-postgres # The host is the container name
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - net
+
+networks:
+  net:

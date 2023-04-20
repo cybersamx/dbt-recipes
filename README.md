@@ -9,6 +9,8 @@ Started this project as I was learning dbt. Hope to build up a handy reference f
   * [Basic dbt source (with source freshness) example](source/basic)
 * Seed
   * [Basic dbt seed example](seed/basic)
+* Docker
+  * [Dockerize dbt](docker)
 
 ## Setup
 
@@ -44,7 +46,7 @@ All the dbt projects in this repo uses one common instance of postgres as define
    docker-compose up
    ```
 
-1. Copy the content of [profiles.yml](modeling/sql/profiles.yml) and append it to `~/.dbt/profiles.yml` so that any dbt projects in this repo can connect to the postgres instance.
+1. If you want to set the profile globally, copy the content of [profiles.yml](modeling/sql/profiles.yml) and append it to the global dbt profiles file `~/.dbt/profiles.yml`. This is step is purely informative as it's a moot practice to do so since every dbt project has its own `profiles.yml` with the same profiles that will override the global profiles.  
 
    ```shell
    DBT_PROFILES_FILE="${HOME}/.dbt/profiles.yml"
@@ -52,7 +54,7 @@ All the dbt projects in this repo uses one common instance of postgres as define
    cat ./profiles.yml >> "${DBT_PROFILES_FILE}"
    unset DBT_PROFILES_FILE  
    ```
-   
+
 1. Once you are done, stop and remove the postgres container.
 
    ```shell
@@ -61,11 +63,18 @@ All the dbt projects in this repo uses one common instance of postgres as define
 
 ### Querying and Troubleshooting
 
-Once the postgres container is running, we can query postgres by running the following command from a different shell.
+* Once the postgres container is running, we can query postgres by running the following command from a different shell.
 
-```shell
-# `exec -it` = execute a command in a docker container
-# `postgres_dbt_recipes` = the container name 
-# `-U` = the user to log into postgres
-docker exec -it postgres_dbt_recipes psql -U postgres
-```
+   ```shell
+   # `exec -it` = execute a command in a docker container
+   # `postgres_dbt_recipes` = the container name 
+   # `-U` = the user to log into postgres
+   docker exec -it postgres_dbt_recipes psql -U postgres
+   ```
+
+* Use the `-d` or `--debug` flag in the `dbt` command to display debug logs during its execution. For example: `dbt -d build`. Running the subcommand `debug` prints out basic info of dbt like where it reads its configurations, connector used, the connection to the database, etc.
+
+## References
+
+* [dbt Docs: Introduction](https://docs.getdbt.com/docs/introduction)
+
