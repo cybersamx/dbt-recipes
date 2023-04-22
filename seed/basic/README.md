@@ -4,20 +4,6 @@ This project focuses on the basics of building dbt models using SQL.
 
 Alternatively, we can also build dbt models using Python, which will be covered in a different project.
 
-## Notes/Tips
-
-* We can use the `ref` jinga function to reference a seed, eg. we can reference the companies seed when defining a model by calling the following:
-  ```sql
-  select * from {{ ref('companies') }}
-  ```
-* Use seeds for static data:
-  * A list of look-up data, eg. telephone area code to states.
-  * A list of well-known data, eg. a list of admin account ids.
-* Don't use seeds to load raw data from csv to the destination data warehouse.
-* Use `--select` flag to select a seed to load at a given time, eg. `dbt seed --select companies`.
-* Sometimes it's useful to define the datatype of the columns of your seed. For example, for `zip_codes.csv`, if we don't explicitly declare the `zip_code` as a text datatype, the leading zeros will not be preserved as numerical values in csv will implicitly be converted to a numeric datatype.
-  * Let's suppose we change the datatype of a column, running `dbt seed` will do nothing update the table with new datatype. Instead, run `dbt seed --full-refresh` to drop the existing "seed" tables and recreate/reload the new tables.  
-
 ## Setup
 
 1. Launch the postgres container.
@@ -71,9 +57,21 @@ Alternatively, we can also build dbt models using Python, which will be covered 
    docker-compose -f ../../docker-compose.yml down
    ```
 
-## Notes
+## Notes/Tips
 
 * If we change the model name in the files, the new corresponding tables and views bearing the new names will be created. But the old tables won't be dropped. 
+* We can use the `ref` jinga function to reference a seed, eg. we can reference the companies seed when defining a model by calling the following:
+  ```sql
+  select * from {{ ref('companies') }}
+  ```
+* Use seeds for static data:
+  * A list of look-up data, eg. telephone area code to states.
+  * A list of well-known data, eg. a list of admin account ids.
+* Don't use seeds to load raw data from csv to the destination data warehouse.
+* Use `--select` flag to select a seed to load at a given time, eg. `dbt seed --select companies`.
+* Sometimes it's useful to define the datatype of the columns of your seed. For example, for `zip_codes.csv`, if we don't explicitly declare the `zip_code` as a text datatype, the leading zeros will not be preserved as numerical values in csv will implicitly be converted to a numeric datatype.
+  * Let's suppose we change the datatype of a column, running `dbt seed` will do nothing update the table with new datatype. Instead, run `dbt seed --full-refresh` to drop the existing "seed" tables and recreate/reload the new tables.  
+
 
 ## References
 

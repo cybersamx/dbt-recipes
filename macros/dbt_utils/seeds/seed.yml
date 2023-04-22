@@ -1,0 +1,41 @@
+version: 2
+
+seeds:
+  - name: raw_customers
+    # --- dbt_utils test functions ---
+    tests:
+      # raw_customers and raw_orders should have the same number of rows.
+      - dbt_utils.equal_rowcount:
+          compare_model: ref('raw_orders')
+      # raw_customers should have fewer rows than raw_payments.
+      - dbt_utils.fewer_rows_than:
+          compare_model: ref('raw_payments')
+      # Comparing to self will always succeed
+      - dbt_utils.equality:
+          compare_model: ref('raw_customers')
+          compare_columns:
+            - first_name
+            - last_name
+  - name: raw_orders
+    # --- dbt_utils test functions ---
+    tests:
+      # raw_customers and raw_orders should have the same number of rows.
+      - dbt_utils.equal_rowcount:
+          compare_model: ref('raw_customers')
+      # raw_orders should have fewer rows than raw_payments.
+      - dbt_utils.fewer_rows_than:
+          compare_model: ref('raw_payments')
+
+  - name: raw_payments
+    tests:
+      # Asserts amount is positive.
+      - dbt_utils.expression_is_true:
+          expression: 'amount >= 0'
+    columns:
+      - name: amount
+        tests:
+          - dbt_utils.expression_is_true:
+              # If we are testing a specific column, we don't need to define the column in the expression.
+              expression: '>= 0'
+  - name: raw_more_customers
+    description: This table is the same as raw_customers except it has 1 additional row.

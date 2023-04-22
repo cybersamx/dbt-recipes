@@ -11,6 +11,8 @@ Started this project as I was learning dbt. Hope to build up a handy reference f
   * [Basic dbt seed example](seed/basic)
 * Docker
   * [Dockerize dbt](docker)
+* Macros
+  * [dbt_utils](macros/dbt_utils)
 
 ## Setup
 
