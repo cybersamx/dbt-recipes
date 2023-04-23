@@ -15,6 +15,7 @@ Started this project as I was learning dbt. Hope to build up a handy reference f
   * [dbt_utils](macros/dbt_utils)
 * Test
   * [Basic dbt generic tests](test/basic)
+  * [Custom dbt generic tests](test/custom)
 
 ## Setup
 

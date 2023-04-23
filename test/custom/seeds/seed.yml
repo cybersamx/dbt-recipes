@@ -1,0 +1,12 @@
+version: 2
+
+seeds:
+  - name: raw_payments
+    columns:
+      - name: amount
+        tests:
+          - positive
+      - name: payment_method
+        tests:
+          - text_length:
+              length: 6
