@@ -13,6 +13,8 @@ Started this project as I was learning dbt. Hope to build up a handy reference f
   * [Dockerize dbt](docker)
 * Macros
   * [dbt_utils](macros/dbt_utils)
+* Test
+  * [Basic dbt generic tests](test/basic)
 
 ## Setup
 

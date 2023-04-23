@@ -7,21 +7,10 @@ config-version: 2
 profile: 'dbt_recipes_profile'
 
 # Functional directories.
-#model-paths: ["models"]
 seed-paths: ["seeds"]
-#test-paths: ["tests"]
-#analysis-paths: ["analysis"]
-#macro-paths: ["macros"]
 
 # Build config.
 target-path: "target"  # directory which will store compiled SQL files
 clean-targets:         # directories to be removed by `dbt clean`
   - "target"
   - "dbt_packages"
-#  - "logs"
-#
-#models:
-#  macros_dbt_utils:
-#      materialized: table
-#      staging:
-#        materialized: view

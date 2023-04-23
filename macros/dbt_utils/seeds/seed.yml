@@ -25,7 +25,6 @@ seeds:
       # raw_orders should have fewer rows than raw_payments.
       - dbt_utils.fewer_rows_than:
           compare_model: ref('raw_payments')
-
   - name: raw_payments
     tests:
       # Asserts amount is positive.
