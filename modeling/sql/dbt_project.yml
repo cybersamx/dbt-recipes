@@ -1,21 +1,22 @@
 # General config.
-name: 'basic'
-version: '1.0.0'
+name: modeling_sql
+version: 1.0.0
 config-version: 2
 
 # Profile to use for database connection.
-profile: 'dbt_recipes_profile'
+profile: dbt_recipes_profile
 
 # Functional directories.
-model-paths: ["models"]
+model-paths: ['models']
 
 # Build config.
-target-path: "target"  # directory which will store compiled SQL files
-clean-targets:         # directories to be removed by `dbt clean`
-  - "target"
-  - "dbt_packages"
+target-path: target  # directory which will store compiled SQL files
+clean-targets:       # directories to be removed by `dbt clean`
+  - target
+  - dbt_packages
+  - logs
 
 # Models config.
 models:
-  basic:
+  modeling_sql:
     +materialized: view
