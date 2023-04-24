@@ -1,4 +1,4 @@
-# Basic Test
+# Standard Generic Test
 
 An example of the generic tests provided by dbt-core. 
 

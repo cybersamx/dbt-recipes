@@ -3,19 +3,20 @@
 Started this project as I was learning dbt. Hope to build up a handy reference for anyone looking up for an example on doing things in dbt.
 
 * Modeling
-  * [Basic dbt SQL modeling](modeling/sql)
-  * [Basic dbt Python modeling](modeling/python)
+  * [dbt basic SQL modeling](modeling/sql)
+  * [dbt basic Python modeling](modeling/python)
 * Source
-  * [Basic dbt source (with source freshness) example](source/basic)
+  * [dbt basic source (with source freshness) example](source/basic)
 * Seed
-  * [Basic dbt seed example](seed/basic)
+  * [dbt basic seed example](seed/basic)
 * Docker
   * [Dockerize dbt](docker)
 * Macros
   * [dbt_utils](macros/dbt_utils)
 * Test
-  * [Basic dbt generic tests](test/basic)
-  * [Custom dbt generic tests](test/custom)
+  * [dbt singular test](test/singular)
+  * [dbt standard generic tests](test/generic)
+  * [dbt custom generic tests](test/custom)
 
 ## Setup
 
