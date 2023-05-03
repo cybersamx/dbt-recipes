@@ -5,6 +5,7 @@ Started this project as I was learning dbt. Hope to build up a handy reference f
 * Modeling
   * [dbt SQL modeling](modeling/sql)
     * [Basic SQL modeling](modeling/sql/basic)
+    * [SQL conditional](modeling/sql/conditional)
   * [dbt basic Python modeling](modeling/python)
 * Source
   * [dbt basic source (with source freshness) example](source/basic)

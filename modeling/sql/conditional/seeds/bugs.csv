@@ -1,0 +1,13 @@
+title,type,priority
+can't resolve host,network,
+database corrupted,data,
+logo offset wrong,web,
+typo,web,
+can't ssh,vm,
+datapipeline failed,data,
+response time > 1s,api,
+long access_token expiry,api,
+update system,vm,
+firewall rule update,security,
+test new android device,mobile,
+doesn't support landscape mode,mobile,

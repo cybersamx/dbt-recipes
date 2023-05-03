@@ -1,0 +1,15 @@
+version: 2
+
+models:
+  - name: bugs_case
+    description: 'Priority column populated using sql case when'
+    columns:
+      - name: title
+      - name: type
+      - name: priority
+  - name: bugs_jinga
+    description: 'Priority column populated using a jinga'
+    columns:
+      - name: title
+      - name: type
+      - name: priority

@@ -1,0 +1,8 @@
+version: 2
+
+seeds:
+  - name: bugs
+    columns:
+      - name: title
+      - name: type
+      - name: priority
