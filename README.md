@@ -3,7 +3,8 @@
 Started this project as I was learning dbt. Hope to build up a handy reference for anyone looking up for an example on doing things in dbt.
 
 * Modeling
-  * [dbt basic SQL modeling](modeling/sql)
+  * [dbt SQL modeling](modeling/sql)
+    * [Basic SQL modeling](modeling/sql/basic)
   * [dbt basic Python modeling](modeling/python)
 * Source
   * [dbt basic source (with source freshness) example](source/basic)
@@ -52,7 +53,7 @@ All the dbt projects in this repo uses one common instance of postgres as define
    docker-compose up
    ```
 
-1. If you want to set the profile globally, copy the content of [profiles.yml](modeling/sql/profiles.yml) and append it to the global dbt profiles file `~/.dbt/profiles.yml`. This is step is purely informative as it's a moot practice to do so since every dbt project has its own `profiles.yml` with the same profiles that will override the global profiles.  
+1. If you want to set the profile globally, copy the content of [profiles.yml](modeling/sql/basic/profiles.yml) and append it to the global dbt profiles file `~/.dbt/profiles.yml`. This is step is purely informative as it's a moot practice to do so since every dbt project has its own `profiles.yml` with the same profiles that will override the global profiles.  
 
    ```shell
    DBT_PROFILES_FILE="${HOME}/.dbt/profiles.yml"

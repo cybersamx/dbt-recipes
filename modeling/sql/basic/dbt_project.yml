@@ -1,5 +1,5 @@
 # General config.
-name: modeling_sql
+name: modeling_sql_basic
 version: 1.0.0
 config-version: 2
 
@@ -18,5 +18,5 @@ clean-targets:       # directories to be removed by `dbt clean`
 
 # Models config.
 models:
-  modeling_sql:
+  modeling_sql_basic:
     +materialized: view
