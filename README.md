@@ -22,27 +22,42 @@ Started this project as I was learning dbt. Hope to build up a handy reference f
 
 ## Setup
 
+### Create a virtual environment
+
+1. Create virtual environment.
+
+   ```shell
+   $ python3 -m venv .venv
+   $ source .venv/bin/activate
+   (.venv) $
+   ```
+
 ### Installing dbt
 
-To install dbt:
+1. Install pip and tools.
 
-```shell
-# This will install dbt-postgres plugin and dbt-core
-$ dbt install dbt-postgres
-$ dbt --version
-Core:
-  - installed: 1.4.5
-  - latest:    1.4.5 - Up to date!
+   ```shell
+   pip install -r requirements-pip.txt
+   pip install -r requirements-tools.txt
+   ```
 
-Plugins:
-  - postgres:  1.4.5 - Up to date!
-```
-
-To upgrade:
-
-```shell
-dbt install --upgrade dbt-core
-```
+1. Test that dbt is working.
+   
+   ```shell
+   $ dbt --version
+   Core:
+     - installed: 1.4.5
+     - latest:    1.4.5 - Up to date!
+    
+   Plugins:
+     - postgres:  1.4.5 - Up to date!
+   ```
+   
+   To upgrade:
+   
+   ```shell
+   dbt install --upgrade dbt-core
+   ```
 
 ### Running Postgres
 
@@ -54,19 +69,31 @@ All the dbt projects in this repo uses one common instance of postgres as define
    docker-compose up
    ```
 
-1. If you want to set the profile globally, copy the content of [profiles.yml](modeling/sql/basic/profiles.yml) and append it to the global dbt profiles file `~/.dbt/profiles.yml`. This is step is purely informative as it's a moot practice to do so since every dbt project has its own `profiles.yml` with the same profiles that will override the global profiles.  
+1. The `docker-compose.yml` uses the `db-init.sql` to create users and tables, and then seed tables with initial set of data.
+
+1. When you don't need postgres anymore, stop and remove the postgres container.
+
+   ```shell
+   docker-compose down
+   ```
+
+### Tips
+
+A dbt profile describes a set of configurations needed to connect to a database. Every sample project in this repo has a project-scope profiles as `profiles.yml` at the project root.
+
+If you wish to have a global-scoped profiles, you can create a `~/.dbt/profiles.yml` file or set `DBT_PROFILES_FILE` to the right file. Note that if a dbt project has a `profiles.yml` file, it will still override the global `profiles.yml`. Your project configuration references a database connection profile. 
+
+> **Notes**
+> 
+> It's actually not a bad idea to put all your data connection profiles in a global profiles.yml. This way you avoid accidentally checking in any sensitive configurations being checked into your version control system.  
+
+1. If you want to set the dbt profile globally, copy the content of [profiles.yml](modeling/sql/basic/profiles.yml) and append it to the global dbt profiles file `~/.dbt/profiles.yml`.  
 
    ```shell
    DBT_PROFILES_FILE="${HOME}/.dbt/profiles.yml"
    [ -f "${DBT_PROFILES_FILE}" ] || touch "${DBT_PROFILES_FILE}"
    cat ./profiles.yml >> "${DBT_PROFILES_FILE}"
    unset DBT_PROFILES_FILE  
-   ```
-
-1. Once you are done, stop and remove the postgres container.
-
-   ```shell
-   docker-compose down
    ```
 
 ### Querying and Troubleshooting
