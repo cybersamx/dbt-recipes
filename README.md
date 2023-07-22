@@ -15,7 +15,7 @@ Started this project as I was learning dbt. Hope to build up a handy reference f
 * Docker
   * [Dockerize dbt](docker)
 * Macros
-  * [dbt_utils](macros/dbt_utils)
+  * [Installing third-party dbt packages: dbt_utils](macros/dbt_utils)
 * Test
   * [dbt singular test](test/singular)
   * [dbt standard generic tests](test/generic)

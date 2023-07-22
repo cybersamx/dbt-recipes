@@ -18,6 +18,10 @@ An example of the generic tests provided by dbt-core.
    # Or run the following command to seed and test
    dbt build
    ```
+   
+   > **Note**
+   >
+   > If you see warnings, chances are that you haven't run `dbt seed`. 
 
 1. Tear down the postgres container.
 

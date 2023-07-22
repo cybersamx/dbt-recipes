@@ -32,3 +32,20 @@ This example creates a table called `for_table` with a column called `n` and use
    ```shell
    docker-compose -f ../../docker-compose.yml down
    ```
+
+## Notes
+
+In SQL, we can do it this albeit without a loop construct.
+
+```sql
+with source_data as (
+  select 0 as n
+  union all
+  select 1 as n
+  union all
+  select 2 as n
+  -- ...
+)
+
+select * from source_data
+```

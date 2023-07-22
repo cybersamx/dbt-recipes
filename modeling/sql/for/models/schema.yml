@@ -1,0 +1,9 @@
+version: 2
+
+models:
+  - name: for_table
+    columns:
+      - name: n
+        tests:
+          - not_null
+          - unique

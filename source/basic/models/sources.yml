@@ -6,6 +6,12 @@ sources:
     schema: dbt_recipes
     tables:
       - name: customers
+        columns:
+          - name: id
+            description: 'Customer id'
+            tests:
+              - not_null
+              - unique
       - name: products
       - name: orders
         loaded_at_field: ordered_at
