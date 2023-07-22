@@ -1,0 +1,11 @@
+# General config.
+name: modeling_sql_for
+version: 1.0.0
+config-version: 2
+
+# Profile to use for database connection.
+profile: dbt_recipes_profile
+
+# Functional directories.
+model-paths:
+  - models
